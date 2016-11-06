@@ -60,7 +60,7 @@ public class MenuPrincipalCtrl implements ActionListener {
 			}
 			
 			else if (ChoixOption.equals("Recapitulatif visite")) {
-				vue.ouvrirFenetre(new JIFVisiteRecap(vue));
+				//vue.ouvrirFenetre(new JIFVisiteRecap(vue,));
 			}
 			
 			else if (ChoixOption.equals("Mise à jour")) {

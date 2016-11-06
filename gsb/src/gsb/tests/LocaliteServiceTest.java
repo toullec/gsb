@@ -6,7 +6,7 @@ import gsb.service.LocaliteService;
 public class LocaliteServiceTest {
 
 	public static void main(String[] args){
-		Localite uneLocalite = LocaliteService.rechercherLocalite("13012");
+		Localite uneLocalite = LocaliteService.rechercherLocalite("46000");
 		System.out.println(uneLocalite.getCodePostal());
 		System.out.println(uneLocalite.getVille());
 	}

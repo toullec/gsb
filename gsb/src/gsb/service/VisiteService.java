@@ -7,13 +7,13 @@ import gsb.modele.dao.VisiteDao;
 
 public class VisiteService {
 
-	public static Visite rechercherVisite(String reference, Medecin unMedecin, Visiteur unVisiteur){
+	public static Visite rechercherVisite(String reference){
 		Visite uneVisite = null;
 		try{
 			if(reference==null){
 				throw new Exception("Donne obligatoire : reference");
 			}
-			uneVisite = VisiteDao.rechercher(reference, unMedecin, unVisiteur);	
+			uneVisite = VisiteDao.rechercher(reference);	
 		}
 		catch(Exception e){
 			System.out.println(e.getMessage());

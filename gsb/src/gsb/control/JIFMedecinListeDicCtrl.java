@@ -3,12 +3,15 @@ package gsb.control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
 import gsb.modele.Medecin;
 import gsb.vue.JIFMedecinFiche;
 import gsb.vue.JIFMedecinListeDic;
 import gsb.vue.MenuPrincipal;
 
-public class JIFMedecinListeDicCtrl implements ActionListener{
+public class JIFMedecinListeDicCtrl implements ActionListener, ListSelectionListener{
 	protected JIFMedecinListeDic vue;
 	protected MenuPrincipal fenetreContainer;
 	
@@ -26,9 +29,23 @@ public class JIFMedecinListeDicCtrl implements ActionListener{
    	   			fenetreContainer.ouvrirFenetre(new JIFMedecinFiche(unMedecin));
    			}
    		}
-   		if(source == vue.getTable()){
+   		/*if(source == vue.getTable()){
+   			//System.out.println("vue.getTable()");
    			vue.getJTcodeMedecin().setText((String)vue.getTable().getValueAt(vue.getTable().getSelectedRow(), vue.getTable().getSelectedColumn()));
    			
-   		}
+   		}*/
+	}
+
+	@Override
+	public void valueChanged(ListSelectionEvent evt) {
+
+
+		if(evt.getValueIsAdjusting()){
+			System.out.println("vue.getTable()");
+   			vue.getJTcodeMedecin().setText((String)vue.getTable().getValueAt(vue.getTable().getSelectedRow(), vue.getTable().getSelectedColumn()));
+   			
+			
+		}
+		
 	}
 }

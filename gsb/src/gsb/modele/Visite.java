@@ -4,17 +4,17 @@ public class Visite {
 	private String reference;
 	private String date;
 	private String commentaire;
-	private String matricule;
-	private String codeMed;
+	private Visiteur matricule;
+	private Medecin medecin;
 	
 	
-	public Visite(String reference, String date, String commentaire, String matricule, String codeMed){
-		this.reference=reference;
-		this.date=date;
-		this.commentaire=commentaire;
-		this.matricule=matricule;
-		this.codeMed=codeMed;
-			
+	public Visite(String reference, String date, String commentaire, Visiteur matricule, Medecin medecin) {
+		super();
+		this.reference = reference;
+		this.date = date;
+		this.commentaire = commentaire;
+		this.matricule = matricule;
+		this.medecin = medecin;
 	}
 
 
@@ -48,23 +48,23 @@ public class Visite {
 	}
 
 
-	public String getMatricule() {
+	public Visiteur getMatricule() {
 		return matricule;
 	}
 
 
-	public void setMatricule(String matricule) {
+	public void setMatricule(Visiteur matricule) {
 		this.matricule = matricule;
 	}
 
 
-	public String getCodeMed() {
-		return codeMed;
+	public Medecin getMedecin() {
+		return medecin;
 	}
 
 
-	public void setCodeMed(String codeMed) {
-		this.codeMed = codeMed;
+	public void setMedecin(Medecin medecin) {
+		this.medecin = medecin;
 	}
 	
 	

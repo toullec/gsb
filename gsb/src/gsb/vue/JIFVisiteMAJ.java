@@ -46,9 +46,10 @@ public class JIFVisiteMAJ extends JInternalFrame{
 		matriculeJT = new JTextField();
 		commentaireJT = new JTextField();
 		codeMedecinJT = new JTextField();
+		btnModifier = new JButton("Modifier");
 		
 		p = new JPanel();  // panneau principal de la fenêtre
-        pTexte = new JPanel(new GridLayout(2,6));
+        pTexte = new JPanel(new GridLayout(6,2));
         
         pTexte.add(referenceJL);
         pTexte.add(referenceJT);

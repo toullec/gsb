@@ -52,10 +52,10 @@ public class JIFVisiteAjout extends JInternalFrame{
         pTexte.add(referenceJT);
         pTexte.add(dateVisiteJL);
         pTexte.add(dateVisiteJT);
-        pTexte.add(matriculeJL);
-        pTexte.add(matriculeJT);
         pTexte.add(commentaireJL);
         pTexte.add(commentaireJT);
+        pTexte.add(matriculeJL);
+        pTexte.add(matriculeJT);
         pTexte.add(codeMedecinJL);
         pTexte.add(codeMedecinJT);
         
@@ -69,7 +69,24 @@ public class JIFVisiteAjout extends JInternalFrame{
 		
 	}
 	
+	public JTextField getReferenceJT(){
+		return this.referenceJT;
+	}
+	public JTextField getDateVisiteJT(){
+		return this.dateVisiteJT;
+	}
 	
+	public JTextField getMatriculeJT(){
+		return this.matriculeJT;
+	}
+	
+	public JTextField getCommentaireJT(){
+		return this.commentaireJT;
+	}
+	
+	public JTextField getCodeMedecinJT(){
+		return this.codeMedecinJT;
+	}
 	
 	public JButton getBtnAjouter(){
 		return this.btnAjouter;

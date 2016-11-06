@@ -30,6 +30,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionListener;
 
 /**
@@ -73,17 +74,19 @@ public class JIFMedecinListeDic extends JInternalFrame {
 		String[][] data = new String[nbLignes][4] ;
 		//for(Medecin unMedecin : lesMedecins){
 		
+
 		for (Map.Entry<String,Medecin> uneEntree : diccoMedecin.entrySet()){
 			data[i][0] = uneEntree.getValue().getCodeMed();
 			data[i][1] = uneEntree.getValue().getNom();
 			data[i][2] = uneEntree.getValue().getPrenom();
 			data[i][3] = uneEntree.getValue().getLaLocalite().getVille() ;
+			
 			i++;
 			}
 		String[] columnNames = {"Code", "Nom","Prenom","Ville"};
 		table = new JTable(data, columnNames);
-		
-		
+		ListSelectionModel listSelectionModel = table.getSelectionModel();
+		listSelectionModel.addListSelectionListener(ctrl);
 		scrollPane = new JScrollPane(table);
 		scrollPane.setPreferredSize(new Dimension(400, 200));
 		p.add(scrollPane);

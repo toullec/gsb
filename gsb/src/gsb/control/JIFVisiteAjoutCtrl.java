@@ -3,6 +3,7 @@ package gsb.control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import gsb.modele.dao.VisiteDao;
 import gsb.vue.JIFVisiteAjout;
 
 public class JIFVisiteAjoutCtrl implements ActionListener{
@@ -16,6 +17,8 @@ public class JIFVisiteAjoutCtrl implements ActionListener{
 		
 		if(evt.getSource() ==vue.getBtnAjouter()){
 			System.out.println("if vue.getBtnAjouter visiteAjoutCtrl");
+			VisiteDao.ajouterVisite(vue.getReferenceJT().getText(),vue.getDateVisiteJT().getText()
+					,vue.getCommentaireJT().getText(),vue.getMatriculeJT().getText(),vue.getCodeMedecinJT().getText());
 		}
 		
 	}

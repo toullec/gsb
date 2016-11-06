@@ -7,16 +7,14 @@ public class Visiteur {
 	private String login;
 	private String mdp;
 	private String adresse;
-	private String telephone;
+	private Localite codePostal;
 	private String dateEntree;
-	
-	
 	private String codeUnit;
 	private String nomUnite;
 	
 	
 	public Visiteur(String matricule, String nom, String prenom, String login, String mdp, String adresse,
-			String telephone, String dateEntree, String codeUnit, String nomUnite) {
+			Localite codePostal, String dateEntree, String codeUnit, String nomUnite) {
 		super();
 		this.matricule = matricule;
 		this.nom = nom;
@@ -24,7 +22,7 @@ public class Visiteur {
 		this.login = login;
 		this.mdp = mdp;
 		this.adresse = adresse;
-		this.telephone = telephone;
+		this.codePostal=codePostal;
 		this.dateEntree = dateEntree;
 		this.codeUnit = codeUnit;
 		this.nomUnite = nomUnite;
@@ -91,15 +89,14 @@ public class Visiteur {
 	}
 
 
-	public String getTelephone() {
-		return telephone;
+	
+	public Localite getCodePostal(){
+		return this.codePostal;
 	}
-
-
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
+	
+	public void setCodePostal(Localite codePostal){
+		this.codePostal=codePostal;
 	}
-
 
 	public String getDateEntree() {
 		return dateEntree;

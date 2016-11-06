@@ -74,6 +74,8 @@ public class JIFMedicamentListe extends JInternalFrame{
 			}
 		String[] columnNames = {"Code", "Nom","Famille"};
 		table = new JTable(data, columnNames);
+		ListSelectionModel listSelectionModel = table.getSelectionModel();
+		listSelectionModel.addListSelectionListener(ctrl);
 		
 		scrollPane = new JScrollPane(table);
 		scrollPane.setPreferredSize(new Dimension(400, 200));

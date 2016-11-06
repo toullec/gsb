@@ -19,6 +19,7 @@ public class JIFMedicamentFiche  extends JInternalFrame{
 	private JTextField contreIndicJT;
 	private JTextField codeFamilleJT;
 	private JTextField libelleFamilleJT;
+	private JTextField prixEchantillonJT;
 	
 	private JLabel depotLegalJL;
 	private JLabel nomJL;
@@ -27,6 +28,7 @@ public class JIFMedicamentFiche  extends JInternalFrame{
 	private JLabel contreIndicJL;
 	private JLabel codeFamilleJL;
 	private JLabel libelleFamilleJL;
+	private JLabel prixEchantillonJL;
 	
 	protected JPanel p;  
 	protected JPanel pTexte;
@@ -55,6 +57,7 @@ public class JIFMedicamentFiche  extends JInternalFrame{
 		contreIndicJL = new JLabel("Contre indication:");
 		codeFamilleJL = new JLabel("Code famille:");
 		libelleFamilleJL = new JLabel("Libelle famille:");
+		prixEchantillonJL = new JLabel("Prix echantillon");
 		
 		
 		p = new JPanel();
@@ -80,7 +83,7 @@ public class JIFMedicamentFiche  extends JInternalFrame{
 		remplirText(leMedicament);
         Container contentPane = getContentPane();
         contentPane.add(p);
-		//this.remplirText(unMedicament);
+		
 	}
 	
 	public void remplirText(Medicament unMedicament) 	
@@ -91,6 +94,7 @@ public class JIFMedicamentFiche  extends JInternalFrame{
         effetsJT.setText(unMedicament.getEffets());
         contreIndicJT.setText(unMedicament.getContreIndication());
         codeFamilleJT.setText(unMedicament.getCodeFamille());
+        prixEchantillonJT.setText(""+unMedicament.getPrixEchantillon());
         libelleFamilleJT.setText(unMedicament.getLibelleFamille());
         
         

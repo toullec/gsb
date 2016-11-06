@@ -2,12 +2,12 @@ package gsb.modele;
 
 public class Offre {
 	private Medicament unMedic;
-	private Visiteur unVisiteur;
+	private Visite uneVisite;
 	private int depot;
 
-	public Offre(Medicament unMedic,Visiteur unVisiteur, int depot){
+	public Offre(Visite uneVisite,Medicament unMedic, int depot){
 		this.unMedic=unMedic;
-		this.unVisiteur=unVisiteur;
+		this.uneVisite=uneVisite;
 		this.depot=depot;
 		
 	}
@@ -21,12 +21,12 @@ public class Offre {
 		this.unMedic = unMedic;
 	}
 
-	public Visiteur getUnVisiteur() {
-		return unVisiteur;
+	public Visite getUneVisite() {
+		return uneVisite;
 	}
 
-	public void setUnVisiteur(Visiteur unVisiteur) {
-		this.unVisiteur = unVisiteur;
+	public void setUnVisiteur(Visite uneVisite) {
+		this.uneVisite = uneVisite;
 	}
 
 	public int getDepot() {
