@@ -11,8 +11,12 @@ import javax.swing.JTextField;
 
 import gsb.control.JIFVisiteAjoutCtrl;
 import gsb.modele.Visite;
+import gsb.modele.Visiteur;
+import gsb.modele.Medecin;
+import gsb.modele.dao.MedecinDao;
 import gsb.modele.dao.MedicamentDao;
 import gsb.modele.dao.VisiteDao;
+import gsb.modele.dao.VisiteurDao;
 
 public class JIFVisiteRecap extends JInternalFrame {
 	private JButton btnAjouter;
@@ -73,9 +77,13 @@ public class JIFVisiteRecap extends JInternalFrame {
 	}
 	
 	public void remplirText(Visite uneVisite){
+		System.out.println(uneVisite);
+		System.out.println("remplir texte"+uneVisite.getMedecin());
+		Medecin medecin =  MedecinDao.rechercher(uneVisite.getMedecin().getCodeMed());
+		Visiteur visiteur = VisiteurDao.rechercher(uneVisite.getMatricule().getMatricule());
 		referenceJT.setText(uneVisite.getReference());
 		dateVisiteJT.setText(uneVisite.getDate());
-		matriculeJT.setText(uneVisite.getMatricule().getMatricule());
+		matriculeJT.setText(visiteur.getMatricule());//
 		commentaireJT.setText(uneVisite.getCommentaire());
 		codeMedecinJT.setText(uneVisite.getMedecin().getCodeMed());
 	}

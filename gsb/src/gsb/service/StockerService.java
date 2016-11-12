@@ -1,10 +1,19 @@
 package gsb.service;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import gsb.modele.Localite;
+import gsb.modele.Stocker;
+import gsb.modele.Visite;
 import gsb.modele.Medicament;
 import gsb.modele.Stocker;
 import gsb.modele.Visiteur;
+import gsb.modele.dao.ConnexionMySql;
 import gsb.modele.dao.LocaliteDao;
+import gsb.modele.dao.StockerDao;
 import gsb.modele.dao.StockerDao;
 
 public class StockerService {
@@ -22,4 +31,38 @@ public class StockerService {
 		
 	}
 
+	
+	public static ArrayList<Stocker> retournerCollectionDesStocks(){
+		ArrayList<Stocker> Stocker = StockerDao.retournerCollectionDesStocks();
+			try{
+			if (Stocker==null) {
+	            throw new Exception("Stocker null");
+	        }
+			
+			}
+			catch(Exception e){
+				System.out.println( e.getMessage());
+			}
+			return Stocker;
+	}
+	
+	
+	public static HashMap<String,Stocker> retournerDictionnaireDesStockers(){
+		HashMap<String,Stocker> stocker = StockerDao.retournerDictionnaireDesStocks();
+	
+		try{
+			if (stocker==null) {
+	            throw new Exception("Stocker null");
+	        }
+			
+			}
+			catch(Exception e){
+				System.out.println( e.getMessage());
+			}
+		
+		return stocker;
+	}
+	
+	
+	
 }

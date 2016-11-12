@@ -1,8 +1,12 @@
 package gsb.service;
 
-import gsb.modele.Medecin;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import gsb.modele.Visite;
 import gsb.modele.Visite;
 import gsb.modele.Visiteur;
+import gsb.modele.dao.VisiteDao;
 import gsb.modele.dao.VisiteDao;
 
 public class VisiteService {
@@ -20,4 +24,37 @@ public class VisiteService {
 		}
 		return uneVisite;
 	}	
+	
+	
+	public static ArrayList<Visite> retournerCollectionDesVisites(){
+		ArrayList<Visite> visite = VisiteDao.retournerCollectionDesVisites();
+			try{
+			if (visite==null) {
+	            throw new Exception("Visite null");
+	        }
+			
+			}
+			catch(Exception e){
+				System.out.println( e.getMessage());
+			}
+			return visite;
+	}
+	
+	
+	public static HashMap<String,Visite> retournerDictionnaireDesVisites(){
+		HashMap<String,Visite> visite = VisiteDao.retournerDictionnaireDesVisites();
+	
+		try{
+			if (visite==null) {
+	            throw new Exception("Visite null");
+	        }
+			
+			}
+			catch(Exception e){
+				System.out.println( e.getMessage());
+			}
+		
+		return visite;
+	}
+	
 }

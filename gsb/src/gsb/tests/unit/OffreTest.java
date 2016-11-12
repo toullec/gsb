@@ -12,7 +12,7 @@ public class OffreTest extends TestCase{
 	//uneVisite
 	
 	public void setUp() throws Exception{
-		offre = new OffreDao().rechercher(VisiteDao.rechercher(""), MedicamentDao.rechercher(""), 4); 
+		offre = new OffreDao().rechercher(VisiteDao.rechercher(""), MedicamentDao.rechercher("")); 
 		
 	}
 	

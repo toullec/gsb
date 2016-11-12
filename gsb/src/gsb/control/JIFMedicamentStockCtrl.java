@@ -22,7 +22,8 @@ public class JIFMedicamentStockCtrl implements ActionListener{
 	public void actionPerformed(ActionEvent evt) {
 
 		if(evt.getSource() == vueStock.getEntrerBtn()){
-			vueStock.remplirText(StockerDao.rechercher(VisiteurDao.rechercher(vueStock.getJTCode().getText()),MedicamentDao.rechercher(vueStock.getJTMedic().getText())));
+			//vueStock.remplirText(StockerDao.rechercher(VisiteurDao.rechercher(vueStock.getJTCode().getText()),MedicamentDao.rechercher(vueStock.getJTMedic().getText())));
+			vueStock.remplirTab(vueStock.getJTCode().getText());
 		}
 		
 	}

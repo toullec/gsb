@@ -14,6 +14,7 @@ import gsb.modele.Medicament;
 import gsb.modele.Stocker;
 import gsb.modele.dao.MedicamentDao;
 import gsb.modele.dao.StockerDao;
+import gsb.modele.dao.VisiteurDao;
 
 public class JIFMedicamentStock extends JInternalFrame {
 	private JTextField JTCode;
@@ -56,10 +57,38 @@ public class JIFMedicamentStock extends JInternalFrame {
 		pTexte.add(JLCode);
 		pTexte.add(JTCode);
 
-		diccoStock = StockerDao.retournerDictionnaireDesStocks();
+		
+		
+
+		scrollPane = new JScrollPane(table);
+		scrollPane.setPreferredSize(new Dimension(400, 200));
+		//p.add(scrollPane);
+		this.entrerBtn.addActionListener(ctrl);
+
+		pSaisie = new JPanel(new GridLayout(1, 3));
+		pSaisie.add(JLCode);
+		pSaisie.add(JTCode);
+		//pSaisie.add(JLMedic);
+		//pSaisie.add(JTMedic);
+		pSaisie.add(entrerBtn);
+
+		p.add(pSaisie);
+
+		Container contentPane = getContentPane();
+		contentPane.add(p);
+
+	}
+	
+	public void remplirTab(String visiteur){
+		diccoStock = StockerDao.retournerDictionnaireDesStocks(VisiteurDao.rechercher(visiteur));
 		int nbLignes = diccoStock.size();
-		int i = 0;
+		String[] columnNames = { "Code", "Nom", "Stock" };
 		String[][] data = new String[nbLignes][3];
+		table = new JTable(data, columnNames);
+		
+		
+		int i = 0;
+		
 		// for(Medecin unMedecin : lesMedecins){
 
 		for (Map.Entry<String, Stocker> uneEntree : diccoStock.entrySet()) {
@@ -69,26 +98,14 @@ public class JIFMedicamentStock extends JInternalFrame {
 
 			i++;
 		}
-		String[] columnNames = { "Code", "Nom", "Stock" };
-		table = new JTable(data, columnNames);
-
+		
 		scrollPane = new JScrollPane(table);
 		scrollPane.setPreferredSize(new Dimension(400, 200));
 		p.add(scrollPane);
-		this.entrerBtn.addActionListener(ctrl);
-
-		pSaisie = new JPanel(new GridLayout(1, 3));
-		pSaisie.add(JLCode);
-		pSaisie.add(JTCode);
-		pSaisie.add(JLMedic);
-		pSaisie.add(JTMedic);
-		pSaisie.add(entrerBtn);
-
-		p.add(pSaisie);
-
 		Container contentPane = getContentPane();
 		contentPane.add(p);
-
+		contentPane.repaint();
+		contentPane.validate();
 	}
 
 	public void remplirText(Stocker unStock) { // méthode qui permet de

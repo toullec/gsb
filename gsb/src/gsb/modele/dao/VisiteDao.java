@@ -20,8 +20,8 @@ public class VisiteDao {
 				.execReqSelection("select * from VISITE where REFERENCE='" + reference + "'");
 		try {
 			if (reqSelection.next()) {
-				unMedecin = MedecinDao.rechercher(reqSelection.getString(4));
-				unVisiteur = VisiteurDao.rechercher(reqSelection.getString(5));
+				unMedecin = MedecinDao.rechercher(reqSelection.getString(5));
+				unVisiteur = VisiteurDao.rechercher(reqSelection.getString(4));
 				uneVisite = new Visite(reqSelection.getString(1), reqSelection.getString(2), reqSelection.getString(3),
 						unVisiteur, unMedecin);
 
@@ -52,7 +52,7 @@ public class VisiteDao {
 
 	public static HashMap<String, Visite> retournerDictionnaireDesVisites() {
 		HashMap<String, Visite> diccoDesVisites = new HashMap<String, Visite>();
-		ResultSet reqSelection = ConnexionMySql.execReqSelection("select REFERENCE,CODEMED,DATEVISITE from VISITE");
+		ResultSet reqSelection = ConnexionMySql.execReqSelection("select REFERENCE from VISITE");
 		try {
 			while (reqSelection.next()) {
 				String reference = reqSelection.getString(1);

@@ -9,7 +9,6 @@ public class Visite {
 	
 	
 	public Visite(String reference, String date, String commentaire, Visiteur matricule, Medecin medecin) {
-		super();
 		this.reference = reference;
 		this.date = date;
 		this.commentaire = commentaire;

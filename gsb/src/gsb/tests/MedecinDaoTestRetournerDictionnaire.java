@@ -30,6 +30,9 @@ public class MedecinDaoTestRetournerDictionnaire {
 		if (unDicco.containsKey("m002")){
 			System.out.println(unDicco.get("m002").getNom());
 		}
+		else{
+			System.out.println("Valeur non trouvée.");
+		}
 
 	}
 

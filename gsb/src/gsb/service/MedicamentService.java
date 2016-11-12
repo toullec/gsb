@@ -1,7 +1,11 @@
 package gsb.service;
 
-import gsb.modele.Medecin;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import gsb.modele.Medicament;
+import gsb.modele.Medicament;
+import gsb.modele.dao.MedicamentDao;
 import gsb.modele.dao.MedicamentDao;
 
 public class MedicamentService {
@@ -18,6 +22,38 @@ public class MedicamentService {
 			System.out.println( e.getMessage());
 		}
 		return unMedic;
+	}
+	
+	
+	public static ArrayList<Medicament> retournerCollectionDesMedicaments(){
+		ArrayList<Medicament> Medicament = MedicamentDao.retournerCollectionDesMedicaments();
+			try{
+			if (Medicament==null) {
+	            throw new Exception("Medicament null");
+	        }
+			
+			}
+			catch(Exception e){
+				System.out.println( e.getMessage());
+			}
+			return Medicament;
+	}
+	
+	
+	public static HashMap<String,Medicament> retournerDictionnaireDesMedicaments(){
+		HashMap<String,Medicament> medicament = MedicamentDao.retournerDictionnaireDesMedicaments();
+	
+		try{
+			if (medicament==null) {
+	            throw new Exception("Medicament null");
+	        }
+			
+			}
+			catch(Exception e){
+				System.out.println( e.getMessage());
+			}
+		
+		return medicament;
 	}
 	
 

@@ -55,7 +55,7 @@ public class JIFVisiteListe extends JInternalFrame{
 		
 		for (Map.Entry<String,Visite> uneEntree : diccoVisite.entrySet()){
 			data[i][0] = uneEntree.getValue().getReference();
-			data[i][1] = uneEntree.getValue().getMedecin().getCodeMed();
+			data[i][1] = uneEntree.getValue().getCommentaire();
 			data[i][2] = uneEntree.getValue().getDate();
 
 			i++;
