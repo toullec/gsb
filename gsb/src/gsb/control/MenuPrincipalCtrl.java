@@ -7,6 +7,10 @@ import javax.swing.JMenuItem;
 
 import gsb.vue.*;
 
+/**
+ * @author Simon
+ *
+ */
 public class MenuPrincipalCtrl implements ActionListener {
 	protected MenuPrincipal vue;
 
@@ -17,6 +21,9 @@ public class MenuPrincipalCtrl implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent evt) {
 		// TODO Raccord de méthode auto-généré
+		
+		//clic sur les boutons dans la barre de menu
+		//et ouverture de la fenetre correspondante
 		if (evt.getSource() instanceof JMenuItem) {
 			String ChoixOption = evt.getActionCommand();
 
@@ -64,7 +71,7 @@ public class MenuPrincipalCtrl implements ActionListener {
 			}
 			
 			else if (ChoixOption.equals("Mise à jour")) {
-				vue.ouvrirFenetre(new JIFVisiteMAJ(vue));
+				vue.ouvrirFenetre(new JIFVisiteMAJ());
 			}
 			
 			else if (ChoixOption.equals("Liste visite")) {

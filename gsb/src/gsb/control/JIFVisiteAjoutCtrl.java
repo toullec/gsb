@@ -5,20 +5,29 @@ import java.awt.event.ActionListener;
 
 import gsb.modele.dao.VisiteDao;
 import gsb.vue.JIFVisiteAjout;
+import gsb.vue.JIFVisiteMAJ;
+import gsb.vue.MenuPrincipal;
 
+/**
+ * @author Simon
+ *
+ */
 public class JIFVisiteAjoutCtrl implements ActionListener{
-	private JIFVisiteAjout vue;
+	private JIFVisiteAjout vueAjout;
+	protected MenuPrincipal fenetreContainer;
 	
-	public JIFVisiteAjoutCtrl(JIFVisiteAjout vue){
-		this.vue=vue;
+	public JIFVisiteAjoutCtrl(JIFVisiteAjout vueAjout, MenuPrincipal fenetreContainer){
+		this.vueAjout=vueAjout;
+		this.fenetreContainer=fenetreContainer;
 	}
 	@Override
 	public void actionPerformed(ActionEvent evt) {
 		
-		if(evt.getSource() ==vue.getBtnAjouter()){
-			System.out.println("if vue.getBtnAjouter visiteAjoutCtrl");
-			VisiteDao.ajouterVisite(vue.getReferenceJT().getText(),vue.getDateVisiteJT().getText()
-					,vue.getCommentaireJT().getText(),vue.getMatriculeJT().getText(),vue.getCodeMedecinJT().getText());
+		if(evt.getSource() ==vueAjout.getBtnAjouter()){//clic sur le bouton ajouter
+			//insertion d'une visite
+			VisiteDao.ajouterVisite(vueAjout.getReferenceJT().getText(),vueAjout.getDateVisiteJT().getText()
+					,vueAjout.getCommentaireJT().getText(),vueAjout.getMatriculeJT().getText(),vueAjout.getCodeMedecinJT().getText());
+			
 		}
 		
 	}

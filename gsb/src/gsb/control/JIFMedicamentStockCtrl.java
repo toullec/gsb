@@ -9,6 +9,10 @@ import gsb.modele.dao.VisiteurDao;
 import gsb.vue.JIFMedicamentStock;
 import gsb.vue.MenuPrincipal;
 
+/**
+ * @author Simon
+ *
+ */
 public class JIFMedicamentStockCtrl implements ActionListener{
 	private JIFMedicamentStock vueStock;
 	private MenuPrincipal vue;
@@ -21,8 +25,8 @@ public class JIFMedicamentStockCtrl implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent evt) {
 
-		if(evt.getSource() == vueStock.getEntrerBtn()){
-			//vueStock.remplirText(StockerDao.rechercher(VisiteurDao.rechercher(vueStock.getJTCode().getText()),MedicamentDao.rechercher(vueStock.getJTMedic().getText())));
+		if(evt.getSource() == vueStock.getEntrerBtn()){//clic sur le bouton entrer
+			//le tableau se rempli
 			vueStock.remplirTab(vueStock.getJTCode().getText());
 		}
 		

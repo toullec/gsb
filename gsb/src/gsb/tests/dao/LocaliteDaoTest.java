@@ -7,6 +7,10 @@ import gsb.modele.Medecin;
 import gsb.modele.dao.LocaliteDao;
 import gsb.modele.dao.MedecinDao;
 
+/**
+ * @author Simon
+ *
+ */
 public class LocaliteDaoTest {
 
 	public static void main(String[] args) {

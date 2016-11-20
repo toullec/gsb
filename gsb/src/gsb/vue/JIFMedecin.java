@@ -17,6 +17,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+/**
+ * @author Simon
+ *
+ */
 public class JIFMedecin extends JInternalFrame  {
 	/**
 	 * Commentaire pour <code>serialVersionUID</code>

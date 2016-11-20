@@ -9,8 +9,16 @@ import gsb.modele.Visiteur;
 import gsb.modele.dao.VisiteDao;
 import gsb.modele.dao.VisiteDao;
 
+/**
+ * @author Simon
+ *
+ */
 public class VisiteService {
 
+	/**
+	 * @param reference
+	 * @return
+	 */
 	public static Visite rechercherVisite(String reference){
 		Visite uneVisite = null;
 		try{
@@ -26,6 +34,9 @@ public class VisiteService {
 	}	
 	
 	
+	/**
+	 * @return
+	 */
 	public static ArrayList<Visite> retournerCollectionDesVisites(){
 		ArrayList<Visite> visite = VisiteDao.retournerCollectionDesVisites();
 			try{
@@ -41,6 +52,9 @@ public class VisiteService {
 	}
 	
 	
+	/**
+	 * @return
+	 */
 	public static HashMap<String,Visite> retournerDictionnaireDesVisites(){
 		HashMap<String,Visite> visite = VisiteDao.retournerDictionnaireDesVisites();
 	

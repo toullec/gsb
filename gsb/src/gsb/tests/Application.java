@@ -16,7 +16,7 @@ import gsb.vue.MenuPrincipal;
  */
 public class Application {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {//lancement de l'application
 		MenuPrincipal application;
 		application = new MenuPrincipal();// TODO Raccord de méthode auto-généré
 

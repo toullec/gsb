@@ -9,6 +9,10 @@ import gsb.modele.dao.StockerDao;
 import gsb.modele.dao.VisiteurDao;
 import gsb.vue.JIFVisiteurAjoutEchant;
 
+/**
+ * @author Simon
+ *
+ */
 public class JIFVisiteurAjoutEchantCtrl implements ActionListener{
 	private JIFVisiteurAjoutEchant vue;
 	
@@ -17,7 +21,8 @@ public class JIFVisiteurAjoutEchantCtrl implements ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent evt) {
-		if(evt.getSource()== vue.getAjouterBtn()){
+		if(evt.getSource()== vue.getAjouterBtn()){//clic sur le bouton ajouter
+			//insertion d'un stock
 			StockerDao.inserer(VisiteurDao.rechercher(vue.getCodeVisiteurJT().getText()),MedicamentDao.rechercher(vue.getDepotLegalJT().getText()),vue.getQuantiteJT().getText());
 		}
 		

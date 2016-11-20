@@ -16,7 +16,17 @@ import gsb.modele.dao.LocaliteDao;
 import gsb.modele.dao.StockerDao;
 import gsb.modele.dao.StockerDao;
 
+/**
+ * @author Simon
+ *
+ */
 public class StockerService {
+	/**
+	 * @param visiteur
+	 * @param medicament
+	 * @param qteStock
+	 * @return
+	 */
 	public static Stocker rechercherStock(Visiteur visiteur, Medicament medicament, int qteStock){
 		Stocker stock = null;
 		try {
@@ -32,6 +42,9 @@ public class StockerService {
 	}
 
 	
+	/**
+	 * @return
+	 */
 	public static ArrayList<Stocker> retournerCollectionDesStocks(){
 		ArrayList<Stocker> Stocker = StockerDao.retournerCollectionDesStocks();
 			try{
@@ -47,6 +60,9 @@ public class StockerService {
 	}
 	
 	
+	/**
+	 * @return
+	 */
 	public static HashMap<String,Stocker> retournerDictionnaireDesStockers(){
 		HashMap<String,Stocker> stocker = StockerDao.retournerDictionnaireDesStocks();
 	

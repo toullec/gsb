@@ -6,7 +6,16 @@ import gsb.modele.Visite;
 import gsb.modele.dao.LocaliteDao;
 import gsb.modele.dao.OffreDao;
 
+/**
+ * @author Simon
+ *
+ */
 public class OffreService {
+	/**
+	 * @param visite
+	 * @param medicament
+	 * @return
+	 */
 	public static Offre rechercherOffre(Visite visite, Medicament medicament){
 		Offre offre=null;
 		

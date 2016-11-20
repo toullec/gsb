@@ -23,7 +23,11 @@ import java.util.HashMap;
  */
 public class LocaliteDao {
 	
-	public static Localite rechercher(String codeLocalite){
+	/**
+	 * @param codeLocalite
+	 * @return
+	 */
+	public static Localite rechercher(String codeLocalite){//recherche une localite selon le code postal
 		Localite uneLocalite=null;
 		ResultSet reqSelection = ConnexionMySql.execReqSelection("select * from LOCALITE where CODEPOSTAL='"+codeLocalite+"'");
 		try {
@@ -39,7 +43,10 @@ public class LocaliteDao {
 		return uneLocalite;
 	}
 	
-	public static ArrayList<Localite> retournerCollectionDesLocalites(){
+	/**
+	 * @return arraylist de localites
+	 */
+	public static ArrayList<Localite> retournerCollectionDesLocalites(){// retourne un arraylist de localite
 		ArrayList<Localite> collectionDesLocalites = new ArrayList<Localite>();
 		ResultSet reqSelection = ConnexionMySql.execReqSelection("select CODEPOSTAL from Localite");
 		try{
@@ -55,7 +62,10 @@ public class LocaliteDao {
 		return collectionDesLocalites;
 	}
 	
-	public static HashMap<String,Localite> retournerDictionnaireDesLocalites(){
+	/**
+	 * @return dictionnaire de localites
+	 */
+	public static HashMap<String,Localite> retournerDictionnaireDesLocalites(){// retourne un dictionnaire de localites
 		HashMap<String, Localite> diccoDesLocalites = new HashMap<String, Localite>();
 		ResultSet reqSelection = ConnexionMySql.execReqSelection("select CODEPOSTAL from LOCALITE");
 		try{

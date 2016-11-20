@@ -8,7 +8,15 @@ import gsb.modele.Visiteur;
 import gsb.modele.dao.VisiteurDao;
 import gsb.modele.dao.VisiteurDao;
 
+/**
+ * @author Simon
+ *
+ */
 public class VisiteurService {
+	/**
+	 * @param unMatricule
+	 * @return
+	 */
 	public static Visiteur rechercherFamille(String unMatricule) {
 		Visiteur unVisiteur = null;
 		try {
@@ -22,6 +30,9 @@ public class VisiteurService {
 		return unVisiteur;
 	}
 
+	/**
+	 * @return
+	 */
 	public static ArrayList<Visiteur> retournerCollectionDesVisiteurs() {
 		ArrayList<Visiteur> visiteur = VisiteurDao.retournerCollectionDesVisiteurs();
 		try {
@@ -35,6 +46,9 @@ public class VisiteurService {
 		return visiteur;
 	}
 
+	/**
+	 * @return
+	 */
 	public static HashMap<String, Visiteur> retournerDictionnaireDesVisiteurs() {
 		HashMap<String, Visiteur> visiteur = VisiteurDao.retournerDictionnaireDesVisiteurs();
 

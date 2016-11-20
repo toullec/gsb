@@ -7,13 +7,13 @@ public class MedicamentServiceTest {
 
 	public static void main(String[] args){
 		Medicament unMedicament = MedicamentService.rechercherMedicament("3MYC7");
-		System.out.println(unMedicament.getDepotLegal());
-		System.out.println(unMedicament.getNomCommercial());
-		System.out.println(unMedicament.getPrixEchantillon());
-		System.out.println(unMedicament.getComposition());
-		System.out.println(unMedicament.getContreIndication());
+		System.out.println("DepotLegal:"+unMedicament.getDepotLegal());
+		System.out.println("Nom commercial:"+unMedicament.getNomCommercial());
+		System.out.println("Prix echantillon:"+unMedicament.getPrixEchantillon());
+		System.out.println("Composition:"+unMedicament.getComposition());
+		System.out.println("Contre indication:"+unMedicament.getContreIndication());
 		
-		System.out.println(unMedicament.getEffets());
+		System.out.println("Effets:"+unMedicament.getEffets());
 	}
 	
 }

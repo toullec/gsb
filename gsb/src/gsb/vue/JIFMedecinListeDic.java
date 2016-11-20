@@ -54,7 +54,11 @@ public class JIFMedecinListeDic extends JInternalFrame {
 	protected JButton JBafficherFiche;
 	protected MenuPrincipal fenetreContainer;
 	protected JTable table;
-
+	
+	
+	/**
+	 * @param uneFenetreContainer
+	 */
 	public JIFMedecinListeDic(MenuPrincipal uneFenetreContainer) {
 		
 		
@@ -62,9 +66,7 @@ public class JIFMedecinListeDic extends JInternalFrame {
 		fenetreContainer = uneFenetreContainer;
 		ctrl = new JIFMedecinListeDicCtrl(this,uneFenetreContainer);
 		// récupération des données Medecin dans la collection
-		//lesMedecins = MedecinDao.retournerCollectionDesMedecins();
 
-		//int nbLignes = lesMedecins.size();
 		diccoMedecin = MedecinDao.retournerDictionnaireDesMedecins();
 		int nbLignes= diccoMedecin.size();
 		
@@ -72,9 +74,9 @@ public class JIFMedecinListeDic extends JInternalFrame {
 
 		int i=0;
 		String[][] data = new String[nbLignes][4] ;
-		//for(Medecin unMedecin : lesMedecins){
+	
 		
-
+		//tableau des médecins
 		for (Map.Entry<String,Medecin> uneEntree : diccoMedecin.entrySet()){
 			data[i][0] = uneEntree.getValue().getCodeMed();
 			data[i][1] = uneEntree.getValue().getNom();
@@ -112,24 +114,34 @@ public class JIFMedecinListeDic extends JInternalFrame {
 	}
 	
 	
+	/**
+	 * @return le bouton de la fiche
+	 */
 	public JButton getJBafficherFiche(){
 		return this.JBafficherFiche;
 	}
 	
+	/**
+	 * @return code médecin
+	 */
 	public JTextField getJTcodeMedecin(){
 		return this.JTcodeMedecin;
 	}
 	
+	/**
+	 * @return le dictionnaire de médecin
+	 */
 	public HashMap<String,Medecin> getDiccoMedecin(){
 		return this.diccoMedecin;
 	}
 	
+	/**
+	 * @return
+	 */
 	public JTable getTable(){
 		return this.table;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-	 */
+	
 	
 }

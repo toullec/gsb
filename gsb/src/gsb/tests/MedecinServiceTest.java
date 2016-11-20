@@ -22,14 +22,14 @@ public class MedecinServiceTest {
 	 */
 	public static void main(String[] args) {
 		Medecin unMedecin = MedecinService.rechercherMedecin("m002");
-		System.out.println(unMedecin.getNom());
-		System.out.println(unMedecin.getPrenom());
-		System.out.println(unMedecin.getAdresse());
-		System.out.println(unMedecin.getLaLocalite().getCodePostal());
-		System.out.println(unMedecin.getLaLocalite().getVille());
-		System.out.println(unMedecin.getTelephone());
-		System.out.println(unMedecin.getPotentiel());
-		System.out.println(unMedecin.getSpecialite());
+		System.out.println("Nom:"+unMedecin.getNom());
+		System.out.println("Prenom:"+unMedecin.getPrenom());
+		System.out.println("Adresse:"+unMedecin.getAdresse());
+		System.out.println("Code postal:"+unMedecin.getLaLocalite().getCodePostal());
+		System.out.println("Localite:"+unMedecin.getLaLocalite().getVille());
+		System.out.println("Telephone:"+unMedecin.getTelephone());
+		System.out.println("Potentiel"+unMedecin.getPotentiel());
+		System.out.println("Specialite"+unMedecin.getSpecialite());
 		
 		
 

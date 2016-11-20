@@ -14,6 +14,10 @@ import gsb.modele.Medicament;
 import gsb.modele.dao.MedecinDao;
 import gsb.modele.dao.MedicamentDao;
 
+/**
+ * @author Simon
+ *
+ */
 public class JIFMedicamentListe extends JInternalFrame{
 	private JButton ficheBtn;
 	private JIFMedicamentListeCtrl ctrl;
@@ -35,6 +39,9 @@ public class JIFMedicamentListe extends JInternalFrame{
 	
 	
 	
+	/**
+	 * @param uneFenetreContainer
+	 */
 	public JIFMedicamentListe(MenuPrincipal uneFenetreContainer){
 		super();
 		this.fenetreContainer = uneFenetreContainer;
@@ -51,20 +58,13 @@ public class JIFMedicamentListe extends JInternalFrame{
 		//JTNom = new JTextField("Nom");
 		//JTFamille = new JTextField("Famille");
 		
-		//pTexte.add(JLCode);
-       // pTexte.add(JTCode);
-       // pTexte.add(JLNom);
-       // pTexte.add(JTNom);
-        //pTexte.add(JTFamille);
-       // pTexte.add(JTFamille);
-        
         
         diccoMedicament = MedicamentDao.retournerDictionnaireDesMedicaments();
 		int nbLignes= diccoMedicament.size();
 		int i=0;
 		String[][] data = new String[nbLignes][3] ;
-		//for(Medecin unMedecin : lesMedecins){
 		
+		//remplissage du tableau des medicaments
 		for (Map.Entry<String,Medicament> uneEntree : diccoMedicament.entrySet()){
 			data[i][0] = uneEntree.getValue().getDepotLegal();
 			data[i][1] = uneEntree.getValue().getNomCommercial();
@@ -99,7 +99,7 @@ public class JIFMedicamentListe extends JInternalFrame{
 		
 	}
 	
-	 public void remplirText(Medicament unMedicament) 	
+	 public void remplirText(Medicament unMedicament) 	//on rempli les champs
 	    {  // méthode qui permet de remplir les zones de texte à partir des valeurs passées en paramètres
 	        JTCode.setText(unMedicament.getDepotLegal());        
 	        JTNom.setText(unMedicament.getNomCommercial()); 
@@ -108,20 +108,29 @@ public class JIFMedicamentListe extends JInternalFrame{
 	        
 	     }
 	
-	public void attacherReactions(){
+	public void attacherReactions(){//reactions sur les boutons
 		this.ficheBtn.addActionListener(ctrl);
 		table.getSelectionModel().addListSelectionListener(table);
 	}
 	
 	
+	/**
+	 * @return le bouton de la fiche
+	 */
 	public JButton getFicheBtn(){
 		return this.ficheBtn;
 	}
 	
+	/**
+	 * @return hashmap des medicaments
+	 */
 	public HashMap<String,Medicament> getDiccoMedicament(){
 		return this.diccoMedicament;
 	}
 	
+	/**
+	 * @return 
+	 */
 	public JTable getTable(){
 		return this.table;
 	}

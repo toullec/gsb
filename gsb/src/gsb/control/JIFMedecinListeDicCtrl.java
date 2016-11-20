@@ -11,6 +11,10 @@ import gsb.vue.JIFMedecinFiche;
 import gsb.vue.JIFMedecinListeDic;
 import gsb.vue.MenuPrincipal;
 
+/**
+ * @author Simon
+ *
+ */
 public class JIFMedecinListeDicCtrl implements ActionListener, ListSelectionListener{
 	protected JIFMedecinListeDic vue;
 	protected MenuPrincipal fenetreContainer;
@@ -23,17 +27,13 @@ public class JIFMedecinListeDicCtrl implements ActionListener, ListSelectionList
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		Object source = arg0.getSource();
-   		if (source == vue.getJBafficherFiche()){
+   		if (source == vue.getJBafficherFiche()){//clic sur le bouton fiche détaillee
    			if (vue.getDiccoMedecin().containsKey(vue.getJTcodeMedecin().getText())){
    	   			Medecin unMedecin = vue.getDiccoMedecin().get(vue.getJTcodeMedecin().getText());
-   	   			fenetreContainer.ouvrirFenetre(new JIFMedecinFiche(unMedecin));
+   	   			fenetreContainer.ouvrirFenetre(new JIFMedecinFiche(unMedecin));//ouverture de la fenetre de la fiche
    			}
    		}
-   		/*if(source == vue.getTable()){
-   			//System.out.println("vue.getTable()");
-   			vue.getJTcodeMedecin().setText((String)vue.getTable().getValueAt(vue.getTable().getSelectedRow(), vue.getTable().getSelectedColumn()));
-   			
-   		}*/
+   		
 	}
 
 	@Override
@@ -41,7 +41,7 @@ public class JIFMedecinListeDicCtrl implements ActionListener, ListSelectionList
 
 
 		if(evt.getValueIsAdjusting()){
-			System.out.println("vue.getTable()");
+			//la valeur sélectionné dans le tableau est affiché dans codeMedecinJT
    			vue.getJTcodeMedecin().setText((String)vue.getTable().getValueAt(vue.getTable().getSelectedRow(), vue.getTable().getSelectedColumn()));
    			
 			

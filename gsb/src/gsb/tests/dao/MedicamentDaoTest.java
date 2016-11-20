@@ -5,6 +5,10 @@ import java.util.HashMap;
 import gsb.modele.Medicament;
 import gsb.modele.dao.MedicamentDao;
 
+/**
+ * @author Simon
+ *
+ */
 public class MedicamentDaoTest {
 
 	

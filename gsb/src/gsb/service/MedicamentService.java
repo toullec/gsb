@@ -8,8 +8,16 @@ import gsb.modele.Medicament;
 import gsb.modele.dao.MedicamentDao;
 import gsb.modele.dao.MedicamentDao;
 
+/**
+ * @author Simon
+ *
+ */
 public class MedicamentService {
 	
+	/**
+	 * @param unMedicament
+	 * @return
+	 */
 	public static Medicament rechercherMedicament(String unMedicament){
 		Medicament unMedic = null;
 		try{
@@ -25,6 +33,9 @@ public class MedicamentService {
 	}
 	
 	
+	/**
+	 * @return
+	 */
 	public static ArrayList<Medicament> retournerCollectionDesMedicaments(){
 		ArrayList<Medicament> Medicament = MedicamentDao.retournerCollectionDesMedicaments();
 			try{
@@ -40,6 +51,9 @@ public class MedicamentService {
 	}
 	
 	
+	/**
+	 * @return
+	 */
 	public static HashMap<String,Medicament> retournerDictionnaireDesMedicaments(){
 		HashMap<String,Medicament> medicament = MedicamentDao.retournerDictionnaireDesMedicaments();
 	

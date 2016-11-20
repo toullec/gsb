@@ -16,11 +16,11 @@ public class VisiteServiceTest {
 		//Visiteur visiteur = VisiteurDao.rechercher("b59");
 		//Medicament medicament = MedicamentDao.rechercher("m001");
 		Visite uneVisite = VisiteService.rechercherVisite("V0001");
-		System.out.println(uneVisite.getReference());
-		System.out.println(uneVisite.getDate());
-		System.out.println(uneVisite.getCommentaire());
-		System.out.println(uneVisite.getMatricule());
-		System.out.println(uneVisite.getMedecin());
+		System.out.println("Reference:"+uneVisite.getReference());
+		System.out.println("Date:"+uneVisite.getDate());
+		System.out.println("Commentaire:"+uneVisite.getCommentaire());
+		System.out.println("Matricule:"+uneVisite.getMatricule());
+		System.out.println("Medecin:"+uneVisite.getMedecin());
 		
 	}
 }

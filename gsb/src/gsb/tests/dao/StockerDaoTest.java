@@ -7,6 +7,10 @@ import gsb.modele.Stocker;
 import gsb.modele.dao.MedecinDao;
 import gsb.modele.dao.StockerDao;
 
+/**
+ * @author Simon
+ *
+ */
 public class StockerDaoTest {
 
 	public static void main(String[] args) {

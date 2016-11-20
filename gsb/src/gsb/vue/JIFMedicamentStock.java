@@ -16,6 +16,10 @@ import gsb.modele.dao.MedicamentDao;
 import gsb.modele.dao.StockerDao;
 import gsb.modele.dao.VisiteurDao;
 
+/**
+ * @author Simon
+ *
+ */
 public class JIFMedicamentStock extends JInternalFrame {
 	private JTextField JTCode;
 	private JTextField JTStock;
@@ -79,7 +83,7 @@ public class JIFMedicamentStock extends JInternalFrame {
 
 	}
 	
-	public void remplirTab(String visiteur){
+	public void remplirTab(String visiteur){//rempli le tableau selon le visiteur
 		diccoStock = StockerDao.retournerDictionnaireDesStocks(VisiteurDao.rechercher(visiteur));
 		int nbLignes = diccoStock.size();
 		String[] columnNames = { "Code", "Nom", "Stock" };
@@ -120,14 +124,23 @@ public class JIFMedicamentStock extends JInternalFrame {
 
 	}
 	
+	/**
+	 * @return le bouton entrer
+	 */
 	public JButton getEntrerBtn(){
 		return this.entrerBtn;
 	}
 	
+	/**
+	 * @return le code visiteur
+	 */
 	public JTextField getJTCode(){
 		return this.JTCode;
 	}
 	
+	/**
+	 * @return le nom du medicament
+	 */
 	public JTextField getJTMedic(){
 		return this.JTMedic;
 	}

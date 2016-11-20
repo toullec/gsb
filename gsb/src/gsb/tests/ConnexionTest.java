@@ -24,7 +24,7 @@ public class ConnexionTest {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) {//test de la connexion
 		// TODO Raccord de méthode auto-généré
 		ResultSet resultat = ConnexionMySql
 				.execReqSelection("select * from LOCALITE");

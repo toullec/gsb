@@ -4,6 +4,10 @@ import gsb.modele.Localite;
 import gsb.modele.dao.LocaliteDao;
 import junit.framework.TestCase;
 
+/**
+ * @author Simon
+ *
+ */
 public class LocaliteTest extends TestCase{
 	private Localite localite;
 	

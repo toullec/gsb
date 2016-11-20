@@ -6,6 +6,10 @@ import gsb.modele.dao.StockerDao;
 import gsb.modele.dao.VisiteurDao;
 import junit.framework.TestCase;
 
+/**
+ * @author Simon
+ *
+ */
 public class StockerTest extends TestCase{
 	private Stocker stock;
 	//cette classe ne peut pour l'instant par être testée car il manque le jeu de données pour stocker

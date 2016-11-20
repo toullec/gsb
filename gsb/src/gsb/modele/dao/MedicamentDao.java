@@ -8,6 +8,10 @@ import java.util.HashMap;
 import gsb.modele.Medecin;
 import gsb.modele.Medicament;
 
+/**
+ * @author Simon
+ *
+ */
 public class MedicamentDao {
 	public static Medicament rechercher(String unDepotLegal) {
 		Medicament unMedicament = null;
@@ -33,6 +37,9 @@ public class MedicamentDao {
 	}
 	
 	
+	/**
+	 * @return retourne une collection de médicaments
+	 */
 	public static ArrayList<Medicament> retournerCollectionDesMedicaments(){
 		ArrayList<Medicament> collectionDesMedicaments = new ArrayList<Medicament>();
 		ResultSet reqSelection = ConnexionMySql.execReqSelection("select MED_DEPOTLEGAL from MEDICAMENT");
@@ -49,6 +56,9 @@ public class MedicamentDao {
 		return collectionDesMedicaments;
 	}
 	
+	/**
+	 * @return un dicctionnaire de médicaments
+	 */
 	public static HashMap<String,Medicament> retournerDictionnaireDesMedicaments(){
 		HashMap<String, Medicament> diccoDesMedicaments = new HashMap<String, Medicament>();
 		ResultSet reqSelection = ConnexionMySql.execReqSelection("select MED_DEPOTLEGAL from MEDICAMENT");

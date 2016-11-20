@@ -6,6 +6,10 @@ import java.awt.*;
 
 import javax.swing.*;
 
+/**
+ * @author Simon
+ *
+ */
 public class JIFVisite extends JInternalFrame {
 	protected JPanel p;
 	protected JPanel pTexte;

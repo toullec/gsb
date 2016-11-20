@@ -25,6 +25,10 @@ import gsb.control.*;
  *         de type généré, allez à : Fenêtre - Préférences - Java - Style de
  *         code - Modèles de code
  */
+/**
+ * @author Simon
+ *
+ */
 public class MenuPrincipal extends JFrame  {
 
 	/**
@@ -60,8 +64,9 @@ public class MenuPrincipal extends JFrame  {
 	protected MenuPrincipalCtrl ctrl;
 	
 
+	
 	/**
-	 * 
+	 * application + menu
 	 */
 	public MenuPrincipal() {
 		ctrl = new MenuPrincipalCtrl(this);
@@ -87,9 +92,9 @@ public class MenuPrincipal extends JFrame  {
 
 		mMedicaments = new JMenu("Medicaments");
 		medicConsultationJMI = new JMenuItem("Consultation Medicament");
-		mMedicaments.add(medicConsultationJMI);
+		//mMedicaments.add(medicConsultationJMI);
 		medicAjoutJMI = new JMenuItem("Ajout Medicaments");
-		mMedicaments.add(medicAjoutJMI);
+		//mMedicaments.add(medicAjoutJMI);
 		listeMedicJM = new JMenuItem("Liste Medicament");
 		mMedicaments.add(listeMedicJM);
 		stockEchantillonJMI = new JMenuItem("Stock echantillon");
@@ -99,13 +104,13 @@ public class MenuPrincipal extends JFrame  {
 		
 		mVisites = new JMenu("Visites");
 		visiteConsultationJMI = new JMenuItem("Consultation Visite");
-		mVisites.add(visiteConsultationJMI);
+		//mVisites.add(visiteConsultationJMI);
 		visiteAjoutJMI = new JMenuItem("Ajout Visite");
 		mVisites.add(visiteAjoutJMI);
 		visiteListeJMI = new JMenuItem("Liste visite");
 		mVisites.add(visiteListeJMI);
 		visiteRecapJMI = new JMenuItem("Recapitulatif visite");
-		mVisites.add(visiteRecapJMI);
+		//mVisites.add(visiteRecapJMI);
 		visiteMAJJMI = new JMenuItem("Mise à jour");
 		mVisites.add(visiteMAJJMI);
 		
@@ -118,6 +123,7 @@ public class MenuPrincipal extends JFrame  {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
+	//reactions sur les boutons
 	public void attacherReactions(){
 		medConsultationJMI.addActionListener(ctrl); // installation d'un écouteur d'action
 		medListeJMI.addActionListener(ctrl);
@@ -134,8 +140,11 @@ public class MenuPrincipal extends JFrame  {
 		
 	}
 	
-
-	public void ouvrirFenetre(JInternalFrame uneFenetre) {
+	
+	/**
+	 * @param uneFenetre
+	 */
+	public void ouvrirFenetre(JInternalFrame uneFenetre) {//ouvre la fenetre
 		myJInternalFrame.dispose(); // si une fenêtre était dejà affichée, elle
 									// est libérée
 		myJInternalFrame = uneFenetre;

@@ -10,6 +10,10 @@ import gsb.modele.Medicament;
 import gsb.modele.dao.MedecinDao;
 import gsb.modele.dao.MedicamentDao;
 
+/**
+ * @author Simon
+ *
+ */
 public class JIFMedicamentFiche  extends JInternalFrame{
 	private static final long serialVersionUID =1L;
 	private JTextField depotLegalJT;
@@ -37,6 +41,10 @@ public class JIFMedicamentFiche  extends JInternalFrame{
 	private Medicament leMedicament;
 	
 	
+	/**
+	 * @param uneFenetreContainer
+	 * @param code
+	 */
 	public JIFMedicamentFiche(MenuPrincipal uneFenetreContainer, String code){
 		super();
 		this.fenetreContainer = uneFenetreContainer;
@@ -58,10 +66,10 @@ public class JIFMedicamentFiche  extends JInternalFrame{
 		codeFamilleJL = new JLabel("Code famille:");
 		libelleFamilleJL = new JLabel("Libelle famille:");
 		prixEchantillonJL = new JLabel("Prix echantillon");
-		
+		prixEchantillonJT= new JTextField();
 		
 		p = new JPanel();
-		pTexte = new JPanel(new GridLayout(7,2));
+		pTexte = new JPanel(new GridLayout(8,2));
 		
 		pTexte.add(depotLegalJL);
 		pTexte.add(depotLegalJT);
@@ -77,6 +85,8 @@ public class JIFMedicamentFiche  extends JInternalFrame{
 		pTexte.add(codeFamilleJT);
 		pTexte.add(libelleFamilleJL);
 		pTexte.add(libelleFamilleJT);
+		pTexte.add(prixEchantillonJL);
+		pTexte.add(prixEchantillonJT);//ajout des composants dans le panel texte
 		
 		
 		p.add(pTexte);

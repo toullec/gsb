@@ -7,6 +7,10 @@ import javax.swing.*;
 
 import gsb.control.JIFVisiteAjoutCtrl;
 
+/**
+ * @author Simon
+ *
+ */
 public class JIFVisiteAjout extends JInternalFrame{
 	private JButton btnAjouter;
 	private JLabel referenceJL;
@@ -27,9 +31,12 @@ public class JIFVisiteAjout extends JInternalFrame{
 	
 	private JIFVisiteAjoutCtrl ctrl;
 	
+	/**
+	 * @param fenetreContainer
+	 */
 	public JIFVisiteAjout(MenuPrincipal fenetreContainer){
 		super();
-		this.ctrl = new JIFVisiteAjoutCtrl(this);
+		this.ctrl = new JIFVisiteAjoutCtrl(this,fenetreContainer);
 		this.fenetreContainer = fenetreContainer;
 		
 		referenceJL = new JLabel("Reference:");
@@ -57,7 +64,7 @@ public class JIFVisiteAjout extends JInternalFrame{
         pTexte.add(matriculeJL);
         pTexte.add(matriculeJT);
         pTexte.add(codeMedecinJL);
-        pTexte.add(codeMedecinJT);
+        pTexte.add(codeMedecinJT);//ajout des composants dans le panel texte
         
         pTexte.add(btnAjouter);
         
@@ -69,25 +76,43 @@ public class JIFVisiteAjout extends JInternalFrame{
 		
 	}
 	
+	/**
+	 * @return la réference
+	 */
 	public JTextField getReferenceJT(){
 		return this.referenceJT;
 	}
+	/**
+	 * @return la date de la visite
+	 */
 	public JTextField getDateVisiteJT(){
 		return this.dateVisiteJT;
 	}
 	
+	/**
+	 * @return le matricule
+	 */
 	public JTextField getMatriculeJT(){
 		return this.matriculeJT;
 	}
 	
+	/**
+	 * @return le commentaire
+	 */
 	public JTextField getCommentaireJT(){
 		return this.commentaireJT;
 	}
 	
+	/**
+	 * @return le code medeci
+	 */
 	public JTextField getCodeMedecinJT(){
 		return this.codeMedecinJT;
 	}
 	
+	/**
+	 * @return le bouton ajouter
+	 */
 	public JButton getBtnAjouter(){
 		return this.btnAjouter;
 	}

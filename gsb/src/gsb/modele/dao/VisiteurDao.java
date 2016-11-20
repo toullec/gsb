@@ -10,7 +10,15 @@ import gsb.modele.Visite;
 import gsb.modele.Visiteur;
 //import gsb.modele.Unite;
 
+/**
+ * @author Simon
+ *
+ */
 public class VisiteurDao {
+	/**
+	 * @param matricule
+	 * @return un visiteur selon le matricule
+	 */
 	public static Visiteur rechercher(String matricule) {
 		Visiteur uneVisiteur = null;
 		Localite localite = null;
@@ -36,6 +44,9 @@ public class VisiteurDao {
 	
 	
 	
+	/**
+	 * @return une collection de visiteur
+	 */
 	public static ArrayList<Visiteur> retournerCollectionDesVisiteurs() {
 		ArrayList<Visiteur> collectionDesVisiteurs = new ArrayList<Visiteur>();
 		ResultSet reqSelection = ConnexionMySql.execReqSelection("select MATRICULE from VISITEUR");
@@ -51,6 +62,9 @@ public class VisiteurDao {
 		return collectionDesVisiteurs;
 	}
 
+	/**
+	 * @return un hashmap de visiteurs
+	 */
 	public static HashMap<String, Visiteur> retournerDictionnaireDesVisiteurs() {
 		HashMap<String, Visiteur> diccoDesVisiteurs = new HashMap<String, Visiteur>();
 		ResultSet reqSelection = ConnexionMySql.execReqSelection("select MATRICULE from VISITEUR");

@@ -4,6 +4,10 @@ import gsb.modele.Medicament;
 import gsb.modele.dao.MedicamentDao;
 import junit.framework.TestCase;
 
+/**
+ * @author Simon
+ *
+ */
 public class MedicamentTest extends TestCase{
 	private Medicament medicament;
 	

@@ -24,6 +24,10 @@ import java.util.HashMap;
  */
 public class MedecinDao {
 	
+	/**
+	 * @param codeMedecin
+	 * @return un medecin selon le code
+	 */
 	public static Medecin rechercher(String codeMedecin){
 		Medecin unMedecin=null;
 		Localite uneLocalite= null;
@@ -42,6 +46,10 @@ public class MedecinDao {
 		return unMedecin;
 	}
 	
+	/**
+	 * @return une collection de medecins
+	 */
+	
 	public static ArrayList<Medecin> retournerCollectionDesMedecins(){
 		ArrayList<Medecin> collectionDesMedecins = new ArrayList<Medecin>();
 		ResultSet reqSelection = ConnexionMySql.execReqSelection("select CODEMED from MEDECIN");
@@ -58,6 +66,9 @@ public class MedecinDao {
 		return collectionDesMedecins;
 	}
 	
+	/**
+	 * @return un hashmap de medecins
+	 */
 	public static HashMap<String,Medecin> retournerDictionnaireDesMedecins(){
 		HashMap<String, Medecin> diccoDesMedecins = new HashMap<String, Medecin>();
 		ResultSet reqSelection = ConnexionMySql.execReqSelection("select CODEMED from MEDECIN");

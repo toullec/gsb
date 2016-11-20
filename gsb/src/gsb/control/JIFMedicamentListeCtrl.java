@@ -11,6 +11,10 @@ import gsb.vue.JIFMedicamentFiche;
 import gsb.vue.JIFMedicamentListe;
 import gsb.vue.MenuPrincipal;
 
+/**
+ * @author Simon
+ *
+ */
 public class JIFMedicamentListeCtrl implements ActionListener,ListSelectionListener {
 	private JIFMedicamentListe vueListe;
 	private MenuPrincipal vue;
@@ -22,13 +26,10 @@ public class JIFMedicamentListeCtrl implements ActionListener,ListSelectionListe
 	@Override
 	public void actionPerformed(ActionEvent evt) {
 	
-		if(evt.getSource() == vueListe.getTable()){
-   			vueListe.getJTCode().setText((String)vueListe.getTable().getValueAt(vueListe.getTable().getSelectedRow(), vueListe.getTable().getSelectedColumn()));
-   			
-   		}
-		if(evt.getSource() == vueListe.getFicheBtn()){
-			System.out.println("if getFicheBtn");
-			vue.ouvrirFenetre(new JIFMedicamentFiche(vue,vueListe.getJTCode().getText()));
+		
+		if(evt.getSource() == vueListe.getFicheBtn()){//clic sur le bouton fiche detaillee
+			
+			vue.ouvrirFenetre(new JIFMedicamentFiche(vue,vueListe.getJTCode().getText()));// ouverture de la fenetre
 			
 		}
 		
@@ -38,7 +39,7 @@ public class JIFMedicamentListeCtrl implements ActionListener,ListSelectionListe
 
 
 		if(evt.getValueIsAdjusting()){
-			System.out.println("vue.getTable()");
+			//on clic sur le tableau et la valeur s'affiche dans le codeJT
    			vueListe.getJTCode().setText((String)vueListe.getTable().getValueAt(vueListe.getTable().getSelectedRow(), vueListe.getTable().getSelectedColumn()));
    			
 			

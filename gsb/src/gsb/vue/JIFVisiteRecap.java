@@ -18,6 +18,10 @@ import gsb.modele.dao.MedicamentDao;
 import gsb.modele.dao.VisiteDao;
 import gsb.modele.dao.VisiteurDao;
 
+/**
+ * @author Simon
+ *
+ */
 public class JIFVisiteRecap extends JInternalFrame {
 	private JButton btnAjouter;
 	private JLabel referenceJL;
@@ -38,6 +42,10 @@ public class JIFVisiteRecap extends JInternalFrame {
 	private Visite uneVisite;
 	
 
+	/**
+	 * @param fenetreContainer
+	 * @param reference
+	 */
 	public JIFVisiteRecap(MenuPrincipal fenetreContainer,String reference) {
 		super();
 
@@ -68,15 +76,15 @@ public class JIFVisiteRecap extends JInternalFrame {
 		pTexte.add(commentaireJL);
 		pTexte.add(commentaireJT);
 		pTexte.add(codeMedecinJL);
-		pTexte.add(codeMedecinJT);
+		pTexte.add(codeMedecinJT);//ajoute les composants dans le panel texte
 
-		p.add(pTexte);
+		p.add(pTexte);//ajout dans le panel principal
 		remplirText(uneVisite);
 		Container contentPane = getContentPane();
 		contentPane.add(p);
 	}
 	
-	public void remplirText(Visite uneVisite){
+	public void remplirText(Visite uneVisite){//rempli la fiche de la visite
 		System.out.println(uneVisite);
 		System.out.println("remplir texte"+uneVisite.getMedecin());
 		Medecin medecin =  MedecinDao.rechercher(uneVisite.getMedecin().getCodeMed());

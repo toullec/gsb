@@ -18,8 +18,16 @@ import gsb.modele.dao.MedecinDao;
  * TODO Pour changer le modèle de ce commentaire de type généré, allez à :
  * Fenêtre - Préférences - Java - Style de code - Modèles de code
  */
+/**
+ * @author Simon
+ *
+ */
 public class MedecinService {
 	
+	/**
+	 * @param unCodeMedecin
+	 * @return
+	 */
 	public static Medecin rechercherMedecin(String unCodeMedecin){
 		Medecin unMedecin = null;
 		try{
@@ -35,6 +43,9 @@ public class MedecinService {
 	}
 	
 	
+	/**
+	 * @return
+	 */
 	public static ArrayList<Medecin> retournerCollectionDesMedecins(){
 		ArrayList<Medecin> medecin = MedecinDao.retournerCollectionDesMedecins();
 			try{
@@ -50,6 +61,9 @@ public class MedecinService {
 	}
 	
 	
+	/**
+	 * @return
+	 */
 	public static HashMap<String,Medecin> retournerDictionnaireDesMedecins(){
 		HashMap<String,Medecin> medecin = MedecinDao.retournerDictionnaireDesMedecins();
 	

@@ -5,6 +5,10 @@ import java.util.HashMap;
 import gsb.modele.Visiteur;
 import gsb.modele.dao.VisiteurDao;
 
+/**
+ * @author Simon
+ *
+ */
 public class VisiteurDaoTest {
 
 	public static void main(String[] args) {

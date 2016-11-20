@@ -6,6 +6,10 @@ import gsb.control.JIFVisiteurAjoutEchantCtrl;
 
 import java.awt.*;
 
+/**
+ * @author Simon
+ *
+ */
 public class JIFVisiteurAjoutEchant extends JInternalFrame{
 	private JTextField codeVisiteurJT;
 	private JTextField depotLegalJT;
@@ -22,6 +26,9 @@ public class JIFVisiteurAjoutEchant extends JInternalFrame{
 	protected JIFVisiteurAjoutEchantCtrl ctrl;
 
 	
+	/**
+	 * @param uneFenetreContainer
+	 */
 	public JIFVisiteurAjoutEchant(MenuPrincipal uneFenetreContainer){
 		super();
 		this.fenetreContainer = uneFenetreContainer;
@@ -55,20 +62,32 @@ public class JIFVisiteurAjoutEchant extends JInternalFrame{
 	}
 	
 	
+	/**
+	 * @return le bouton ajouter
+	 */
 	public JButton getAjouterBtn(){
 		return this.ajouterBtn;
 	}
 	
 	
+	/**
+	 * @return le code visiteur
+	 */
 	public JTextField getCodeVisiteurJT(){
 		return this.codeVisiteurJT ;
 	}
 	
+	/**
+	 * @return le depot legal
+	 */
 	public JTextField getDepotLegalJT(){
 		return this.codeVisiteurJT;
 		
 	}
 	
+	/**
+	 * @return la quantité 
+	 */
 	public JTextField getQuantiteJT(){
 		return this.quantiteJT;
 	}

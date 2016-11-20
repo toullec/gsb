@@ -7,6 +7,10 @@ import gsb.modele.Offre;
 import gsb.modele.dao.MedecinDao;
 import gsb.modele.dao.OffreDao;
 
+/**
+ * @author Simon
+ *
+ */
 public class OffreDaoTest {
 
 	public static void main(String[] args) {

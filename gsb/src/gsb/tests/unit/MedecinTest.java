@@ -5,6 +5,10 @@ import gsb.modele.dao.LocaliteDao;
 import gsb.modele.dao.MedecinDao;
 import junit.framework.TestCase;
 
+/**
+ * @author Simon
+ *
+ */
 public class MedecinTest extends TestCase{
 	private Medecin medecin;
 	
