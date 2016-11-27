@@ -14,7 +14,7 @@ import gsb.vue.MenuPrincipal;
  * TODO Pour changer le modèle de ce commentaire de type généré, allez à :
  * Fenêtre - Préférences - Java - Style de code - Modèles de code
  */
-public class Application {
+public class Application{
 
 	public static void main(String[] args) {//lancement de l'application
 		MenuPrincipal application;

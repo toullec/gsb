@@ -26,7 +26,7 @@ public class JIFVisiteAjoutCtrl implements ActionListener{
 		if(evt.getSource() ==vueAjout.getBtnAjouter()){//clic sur le bouton ajouter
 			//insertion d'une visite
 			VisiteDao.ajouterVisite(vueAjout.getReferenceJT().getText(),vueAjout.getDateVisiteJT().getText()
-					,vueAjout.getCommentaireJT().getText(),vueAjout.getMatriculeJT().getText(),vueAjout.getCodeMedecinJT().getText());
+					,vueAjout.getCommentaireJT().getText(),vueAjout.getMatriculeJT().getText(),vueAjout.getMedecinCB().toString());
 			
 		}
 		

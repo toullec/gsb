@@ -2,10 +2,15 @@ package gsb.vue;
 
 import java.awt.Container;
 import java.awt.GridLayout;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
 import gsb.control.JIFVisiteAjoutCtrl;
+import gsb.modele.Medecin;
+import gsb.modele.Medicament;
+import gsb.modele.dao.MedecinDao;
+import gsb.modele.dao.MedicamentDao;
 
 /**
  * @author Simon
@@ -24,6 +29,8 @@ public class JIFVisiteAjout extends JInternalFrame{
 	private JTextField commentaireJT;
 	private JTextField matriculeJT;
 	private JTextField codeMedecinJT;
+	private JComboBox<String> medecinCB;
+	private ArrayList<Medecin> diccoMedecin;
 	
 	private JPanel pTexte;
 	private JPanel p;
@@ -38,7 +45,9 @@ public class JIFVisiteAjout extends JInternalFrame{
 		super();
 		this.ctrl = new JIFVisiteAjoutCtrl(this,fenetreContainer);
 		this.fenetreContainer = fenetreContainer;
-		
+		this.medecinCB = new JComboBox<String>();
+	
+		this.diccoMedecin = MedecinDao.retournerCollectionDesMedecins();
 		referenceJL = new JLabel("Reference:");
 		dateVisiteJL = new JLabel("Date visite:");
 		matriculeJL = new JLabel("Matricule:");
@@ -52,6 +61,11 @@ public class JIFVisiteAjout extends JInternalFrame{
 		codeMedecinJT = new JTextField();
 		btnAjouter = new JButton("Ajouter");
 		
+		
+		for (Medecin medecin : diccoMedecin) {//liste des medicaments
+
+			medecinCB.addItem(medecin.getCodeMed());
+		}
 		p = new JPanel();  // panneau principal de la fenêtre
         pTexte = new JPanel(new GridLayout(6,2));
         
@@ -64,7 +78,7 @@ public class JIFVisiteAjout extends JInternalFrame{
         pTexte.add(matriculeJL);
         pTexte.add(matriculeJT);
         pTexte.add(codeMedecinJL);
-        pTexte.add(codeMedecinJT);//ajout des composants dans le panel texte
+        pTexte.add(medecinCB);//ajout des composants dans le panel texte
         
         pTexte.add(btnAjouter);
         
@@ -115,5 +129,12 @@ public class JIFVisiteAjout extends JInternalFrame{
 	 */
 	public JButton getBtnAjouter(){
 		return this.btnAjouter;
+	}
+	
+	/**
+	 * @return combobox medecin
+	 */
+	public JComboBox getMedecinCB(){
+		return this.medecinCB;
 	}
 }

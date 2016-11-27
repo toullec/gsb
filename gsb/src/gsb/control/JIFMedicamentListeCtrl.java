@@ -3,9 +3,11 @@ package gsb.control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import gsb.modele.dao.MedicamentDao;
 import gsb.vue.JIFMedecinCons;
 import gsb.vue.JIFMedicamentFiche;
 import gsb.vue.JIFMedicamentListe;
@@ -28,8 +30,16 @@ public class JIFMedicamentListeCtrl implements ActionListener,ListSelectionListe
 	
 		
 		if(evt.getSource() == vueListe.getFicheBtn()){//clic sur le bouton fiche detaillee
+			if(MedicamentDao.rechercher(vueListe.getJTCode().getText()) == null){
+				JOptionPane jop3 = new JOptionPane();
+				jop3.showMessageDialog(null, "Code inconnu", "Erreur", JOptionPane.ERROR_MESSAGE);
+
+				
+			}else{
+				vue.ouvrirFenetre(new JIFMedicamentFiche(vue,vueListe.getJTCode().getText()));// ouverture de la fenetre
+				
+			}
 			
-			vue.ouvrirFenetre(new JIFMedicamentFiche(vue,vueListe.getJTCode().getText()));// ouverture de la fenetre
 			
 		}
 		
